@@ -1,6 +1,7 @@
 package br.com.alura.tdd.service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import br.com.alura.tdd.modelo.Funcionario;
 
@@ -13,7 +14,7 @@ public class BonusService {
             valor = BigDecimal.ZERO;
         }
 
-        return valor;
+        return valor.setScale(2, RoundingMode.HALF_EVEN);
     }
 
 }
